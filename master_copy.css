@@ -1,0 +1,197 @@
+header{
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    font-family: 'CaviarDreams-Bold';
+}
+.center-block-main{
+  margin: 0 auto;
+  max-width: 998px;
+
+}
+.main-menu ul{
+   list-style: none;
+}
+.logo{
+    display: inline-block;
+    vertical-align: middle;
+}
+.navigate{
+    display: inline-block;
+    vertical-align: middle;
+}
+.navigate ul{
+    display: inline-flex;
+}.navigate ul li{
+    padding-right: 20px;
+}
+.register-nav{
+
+    padding-top: 9px;
+    padding-right: 20px;
+    float: right;
+    display: inline-block;
+}.register-nav ul{
+    display: inline-flex;
+}.register-nav ul li:first-child{
+    padding-right: 20px;
+}
+.navigate ul li a{
+    text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  color: #282a35;
+  padding: 20px 15px;
+  display: block;
+}.navigate ul li a:hover{
+    background-color: #ffffe6;
+  border-bottom: 1px solid #282a35;
+}
+.register-nav ul li a{
+    text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  color: #282a35;
+  padding: 20px 15px;
+  display: block;
+}.register-nav ul li a:hover{
+    background-color: #ffffe6;
+  border-bottom: 1px solid #282a35;
+}
+/*drop downs*/
+.dropdown{
+    position: relative;
+    display: inline-block;
+}.dropdown-content{
+    visibility: hidden;
+    position: absolute;
+}.dropdown-content li:hover{
+    background-color: #fff;
+}
+.dropdown:hover ul{
+    width: 150px;
+    display: inline-block;
+    visibility: visible;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+    z-index: 1;
+    z-index: 10px;
+}
+.dropdown:hover ul li{
+   padding-right: 0px;
+   padding-left: 0px;
+   width: 100%;
+}
+.dropdown-user{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content-user{
+  position: absolute;
+  display: none;
+  top: 90px;
+}
+.dropdown-user:hover .dropdown-content-user{
+  display: inline-block;
+  z-index: 1;
+}
+/**/
+.unslider{
+  width: 100%;
+}
+.my-slider{
+  width: 100%;
+  margin-left: 20%;
+  margin-top: 50px;
+  /*margin-left: 250px;*/
+}  .my-slider ul li{
+    position: relative;
+  }
+.unslider-nav{
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 10px;
+  top: -50px;
+}
+/* ----------- seqciebi da asidebi ------------ */
+section{
+	display: inline-block;
+  background-color: wheat;
+  width: 100%;
+}section article{
+  background-color: antiquewhite;
+  margin-top: -18px;
+  overflow: auto;
+}section article h1{
+  float: left;
+}
+section .section-content ul {
+    margin-left: 100px;
+    list-style: none;
+    display: inline-block;
+}section .section-content ul li{
+  float: left;
+  margin-right: 15px;
+  margin-top: 20px;
+  width: 180px;
+padding: 0 5px;
+border: 1px solid;
+}section .section-content ul li img{
+  width: 180px;
+  height: 180px;
+}
+section .section-content ul li a{
+  text-decoration: none;
+}
+form{
+  float: right;
+}
+/*!
+ * The important stuffs. The ones that you should copy-paste and use.
+ */
+section .paginate{
+  background-color: white;
+  display: block;
+  margin-bottom: -15px;
+}.paginate ul{
+    margin-left: 37%;
+    list-style: none;
+    display: inline-flex;
+}section .paginate ul li{
+  padding: 3px;
+}
+/* END */
+aside .aside-content ul>li{
+    padding: 3px 0;
+}
+aside .aside-content ul>li>a{
+    text-decoration: none;
+}
+section ul li p{
+  text-align: center;
+}
+/* ------------ footer -----------*/
+footer{
+    background-color: darkgrey;
+    margin-top: 30px;
+    display: flow-root;
+    border-radius: 5px;
+}
+footer p{
+    display: inline-block;
+    margin-left: 40%;
+    font-size: x-large;
+}
+footer ul{
+
+    display: inline-flex;
+    float: right;
+    /* vertical-align: middle; */
+    margin-right: 40px;
+    list-style: none;
+}footer ul li{
+    margin-right: 15px;
+}
+footer ul li img{
+    width: 45px;
+}

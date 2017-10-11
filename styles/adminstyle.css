@@ -1,0 +1,73 @@
+#delete:hover, #add:hover{
+  background-color: #e0ebeb;
+  cursor: pointer;
+  font-weight: bold;
+}
+ul{
+  margin-left: 100px;
+  list-style: none;
+  display: inline-block;
+}ul li{
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}a{
+  text-decoration: none;
+  color: black;
+}a:hover{
+  font-weight: bold;
+  background-color: #e0ebeb;
+}
+img{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.add-watch{
+  margin-bottom: 50px;
+}
+.add-watch input{
+  width: 200px;
+}
+.left-side{
+  margin-left: 25%;
+  float: left;
+}
+.right-side{
+  margin-right: 25%;
+  float: right;
+}
+.submit-add{
+  margin-top: 20px;
+}
+.content{
+  margin-left: 14%;
+  width: 70%;
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 50px;
+  background-color: white;
+  display: inline-block;
+}
+.main-content{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.admin-nav{
+  overflow: auto;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+  background-color: #d7dae8;
+}
+table{
+  border: 1px solid black;
+
+}
+tr{
+  border-bottom: 1px solid black;
+}
+table, tr, td, th{
+
+  padding: 5px;
+}
