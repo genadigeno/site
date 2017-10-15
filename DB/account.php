@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="../master_copy.css">
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="../styles/acc.css">
+    <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
     <title></title>
+    <style media="screen">
+    *{
+      font-family: 'CaviarDreams-Bold';
+    }
+    </style>
   </head>
   <body>
     <header>
@@ -23,17 +29,17 @@
                 <img class="logo" src="../images/logo.jpg" width="100px">
                 <nav class="navigate">
                     <ul>
-                       <li class="head-li"><a href="../index.php">მთავარი</a></li>
-                       <li class="head-li dropdown"><a href="../otherpages/watches.php">საათები</a>
+                       <li class="head-li"><a href="../index.php">Home</a></li>
+                       <li class="head-li dropdown"><a href="../otherpages/watches.php">Watches</a>
                            <ul class="dropdown-content">
-                               <li><a href="../otherpages/watches.php">მაჯის საათი</a></li>
-                               <li><a href="">კედლის საათი</a></li>
-                               <li><a href="">მაღვიძარა</a></li>
+                               <li><a href="../otherpages/watches.php">Watche</a></li>
+                               <li><a href="">Clock</a></li>
+                               <li><a href="">Alarm clock</a></li>
                            </ul>
                         </li>
-                       <li class="head-li"><a href="">აქსესუარები</a></li>
-                       <li class="head-li"><a href="">აქცია</a></li>
-                       <li class="head-li"><a href="">ბრენდები</a></li>
+                       <li class="head-li"><a href="">Accessories</a></li>
+                       <li class="head-li"><a href="">Sale</a></li>
+                       <li class="head-li"><a href="">Brands</a></li>
                     </ul>
                 </nav>
                 <!-- register, login, logout -->

@@ -16,7 +16,7 @@ session_start();
     $res2 = mysqli_query($connection, $sql3);
     $rigi = mysqli_fetch_assoc($res2);
     $product_id = $rigi['id'];
-    $sql1 = "INSERT INTO addcart(product_id, user_id) VALUES('$product_id','$id')";
+    $sql1 = "INSERT INTO addcart(user_id,product_id) VALUES('$id','$product_id')";
     if (mysqli_query($connection, $sql1)) {
       header("Location: ../DB/account.php");
     }

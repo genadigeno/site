@@ -34,7 +34,7 @@
                   $bool = 1;
               }else $bool = 0;
             }
-          if($bool == 0)
+          if(@$bool == 0)
           {
               mysqli_query($connection, $register);
               $_SESSION['message'] = "registered";
