@@ -150,7 +150,7 @@ session_start();
             <article><h1>Watches</h1></article>
             <ul class="watch-list">
                 <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                <li><a href="watche.php?page=<?php echo $row['id']; ?>"><img src="../images/watches/<?php echo $row['image']; ?>.jpg" alt="">
+                <li><a href="watche.php?page=<?php echo $row['id']; ?>"><img src="../images/watches/<?php echo $row['image']; ?>.png" alt="">
                   <p><?php echo $row['name']; ?></p></a>
                   <p><?php echo $row['price']; ?></p>
                 </li>

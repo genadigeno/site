@@ -84,7 +84,7 @@
 
               <ul>
                 <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                    <li><a href="otherpages/watche.php?page=<?php echo $row['id']; ?>"><img src="images/watches/<?php echo $row['image']; ?>.jpg" alt="">
+                    <li><a href="otherpages/watche.php?page=<?php echo $row['id']; ?>"><img src="images/watches/<?php echo $row['image']; ?>.png" alt="">
                       <p><?php echo $row['name']; ?></p></a>
                       <p><?php echo $row['price']; ?> $</p>
                     </li>

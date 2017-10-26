@@ -64,7 +64,7 @@ session_start();
   <body>
     <?php while($row = mysqli_fetch_assoc($resource)) : ?>
       <div class="image-left">
-        <img src="../images/watches/<?php echo $row['image']; ?>.jpg" width="200px">
+        <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
       </div>
       <div class="form-right">
         <form class="form" action="" method="post">
