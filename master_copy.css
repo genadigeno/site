@@ -116,10 +116,9 @@ header{
 /* ----------- seqciebi da asidebi ------------ */
 section{
 	display: inline-block;
-  background-color: wheat;
+  background-color: cornsilk;
   width: 100%;
 }section article{
-  background-color: antiquewhite;
   margin-top: -18px;
   overflow: auto;
 }section article h1{
@@ -134,8 +133,8 @@ section .section-content ul {
   margin-right: 15px;
   margin-top: 20px;
   width: 180px;
-padding: 0 5px;
-border: 1px solid;
+  padding: 0 5px;
+  border: 1px solid white;
 }section .section-content ul li img{
   width: 180px;
   height: 180px;
@@ -145,6 +144,20 @@ section .section-content ul li a{
 }
 form{
   float: right;
+}
+.search{
+  background-color: #282a35;
+  width: 150px;
+  height: 25px;
+  color: white;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+.search:hover{
+  background-color: white;
+  color: #282a35;
+  border: 1px solid #282a35;
+  cursor: pointer;
 }
 /*!
  * The important stuffs. The ones that you should copy-paste and use.
@@ -172,8 +185,11 @@ section ul li p{
 }
 /* ------------ footer -----------*/
 footer{
-    background-color: darkgrey;
+    background-color: #282a35;
+    color: white;
     margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: flow-root;
     border-radius: 5px;
 }

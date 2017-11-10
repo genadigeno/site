@@ -92,6 +92,12 @@ section{
 .watch-list li a img{
   width: 180px;
 }
+section ul li{
+  margin-bottom: 50px;
+}
+section ul li a{
+  text-decoration: none;
+}
 section ul li p{
   text-align: center;
 }
@@ -116,7 +122,7 @@ div.pagination a{
   margin: 2px;
   border: 1px solid #AAAADD;
   text-decoration: none;
-  color: #0000099;
+  color: #282a35;
 }
 div.pagination a:hover, div.pagination a:active{
   border: 1px solid #000099;
@@ -127,7 +133,7 @@ div.pagination span.current{
   margin: 2px;
   border: 1px solid #000099;
   font-weight: bold;
-  background-color: #000099;
+  background-color: #282a35;
   color: #FFF;
 }
 div.pagination span.disabled{
@@ -135,6 +141,37 @@ div.pagination span.disabled{
   margin: 2px;
   border: 1px solid #EEE;
   color: #DDD;
+}
+.search-btn{
+  background-color: #282a35;
+  width: 200px;
+  height: 25px;
+  color: white;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+.search-btn:hover{
+  background-color: white;
+  color: #282a35;
+  border: 1px solid #282a35;
+  cursor: pointer;
+}
+.filter-btn{
+  background-color: #282a35;
+  width: 200px;
+  height: 35px;
+  color: white;
+  margin-left: 20px;
+  transition: background-color 0.3s;
+}
+.filter-btn:hover{
+  background-color: white;
+  color: #282a35;
+  border: 1px solid #282a35;
+  cursor: pointer;
+}
+.pages{
+  text-align: center;
 }
 /* end */
 

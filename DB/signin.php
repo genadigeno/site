@@ -19,6 +19,9 @@
         echo "err";
       }
     }
+    if (isset($_POST['reg'])) {
+      header("Location: signup.php");
+    }
 ?>
 
 
@@ -28,8 +31,12 @@
       <script src="../js/script.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
     <title>ინტერნეტ მაღაზია JM</title>
     <style media="screen">
+      *{
+        font-family: 'CaviarDreams-Bold';
+      }
       body{
         background-color: #ffffe6;
       }
@@ -42,10 +49,9 @@
               <input type="text" name="username" class="email">
               <p>your password</p>
               <input type="password" name="password" class="password"><br>
-              <input type="submit" value="sign in" name="submit" class="submit">
-
+              <input type="submit" value="sign in" name="submit" class="submit"><br>
+              <input type="submit" name="reg" value="Register" class="submit">
           </form>
-          <button class="button"><a href="signup.php" style="text-decoration:none;color:black;">REGISTRATION</a></button>
       </div>
   </body>
 </html>

@@ -5,11 +5,13 @@
 
 }
 .acc-nav h1{
-
+  transition: background-color 0.3s;
+  color: #282a35;
 }
 .acc-nav h1:hover{
   cursor: pointer;
-  background-color: white;
+  background-color: #282a35;
+  color: white;
 }
 .content{
   float: right;

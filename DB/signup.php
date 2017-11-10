@@ -61,8 +61,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../styles/style_r.css">
+    <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
     <title> JM</title>
     <style media="screen">
+      *{
+        font-family: 'CaviarDreams-Bold';
+      }
       body{
         background-color: #ffffe6;
       }
@@ -83,8 +87,8 @@
               <p>re password</p>
               <input type="password" name="rpassword" class="rpassword">
               <p>only .jpg image</p>
-              <input type="file" name="imagefile" value="">
-              <input type="submit" name="submit" class="submit">
+              <input type="file" name="imagefile" value="" class="file">
+              <input type="submit" name="submit" class="submit" value="Register">
           </form>
       </div>
   </body>

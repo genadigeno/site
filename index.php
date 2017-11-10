@@ -37,7 +37,7 @@
                                <li><a href="">Alarm-watch</a></li>
                            </ul>
                         </li>
-                       <li class="head-li"><a href="">Accessories</a></li>
+                       <li class="head-li"><a href="#acc">Accessories</a></li>
                        <li class="head-li"><a href="">Sale</a></li>
                        <li class="head-li"><a href="">Brands</a></li>
                     </ul>
@@ -77,7 +77,7 @@
             <article>
               <h1>Watches</h1>
               <form action="otherpages/watches.php" method="post" name="search" class="forma-search">
-                <input type="submit" name="search" value="Search...">
+                <input type="submit" name="search" value="Search..." class="search">
                 <input type="search" name="search_box" placeholder="Search Watches">
               </form>
            </article>
@@ -90,7 +90,7 @@
                     </li>
                 <?php endwhile; ?>
               </ul>
-              <article><h1>Accesories</h1></article>
+              <article><h1 id="acc">Accesories</h1></article>
         </div>
 
     </section>

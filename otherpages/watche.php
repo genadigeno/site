@@ -56,7 +56,11 @@ session_start();
           width: 200px;
           margin-bottom: 30px;
           height: 35px;
+          transition: background-color 0.3s; 
         }input:hover{
+          color: #282a35;
+          background-color: white;
+          border: 1px solid #282a35;
           cursor: pointer;
         }
     </style>

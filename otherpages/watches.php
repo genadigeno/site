@@ -33,7 +33,7 @@ session_start();
   if ($lastpage > 1) {
     $pagination .= "<div class=\"pagination\">";
     if($page > 1)
-      $pagination .= "<a href=\"$targetpage?page=$prev\">&laquo; Previous</a>";
+      $pagination .= "<a href=\"$targetpage?page=$prev\">&laquo; Prev</a>";
     else
       $pagination .= "<span class=\"disabled\">&previous</span>";
 
@@ -158,12 +158,14 @@ session_start();
             </ul>
 
         </div>
-        <?=$pagination; ?>
+        <div class="pages">
+          <?=$pagination; ?>
+        </div>
     </section>
     <aside>
         <div class="aside-content">
             <form action="" method="post" name="search" class="forma-search">
-                <p>search</p>
+                <input type="button" name="search" value="Search" class="search-btn">
                 <input type="search" name="search_box">
 
                 <p style="background-color: cornsilk;
@@ -178,9 +180,9 @@ session_start();
                 <p style="background-color: cornsilk;
                           padding-left: 90px;
                           padding-bottom: 5px;
-                          padding-top: 5px;;">Price</p>
+                          padding-top: 5px;">Price</p>
                 <ul>
-                    <li><input type="checkbox" name="price[]" "" value="0 AND 99">0 - 99$</li>
+                    <li><input type="checkbox" name="price[]" value="0 AND 99">0 - 99$</li>
                     <li><input type="checkbox" name="price[]" value="100 AND 199">100$ - 199</li>
                     <li><input type="checkbox" name="price[]" value="200 AND 499">200$ - 499$</li>
                     <li><input type="checkbox" name="price[]" value="500 AND 5000">500$ +</li>
@@ -207,7 +209,7 @@ session_start();
                     <li><input type="checkbox" name="color[]" value="other">Others</li>
                     <li></li>
                 </ul>
-                <input type="submit" name="submit" value="Filter">
+                <input type="submit" name="submit" value="Filter" class="filter-btn">
             </form>
         </div>
         <div class="">
