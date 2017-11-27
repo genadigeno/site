@@ -39,19 +39,9 @@
               mysqli_query($connection, $register);
               $_SESSION['message'] = "registered";
               $_SESSION['username'] = $username;
+              header("Location: account.php");
           }
          }
-      }
-      // file
-      $file = $_FILES['imagefile']['name'];
-      $directory = "../images/userimages/";
-      // if($imageFileType = "jpg") {
-      //     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-      // }
-      if (!file_exists($file)) {
-        if (!move_uploaded_file($_FILES['imagefile']['tmp_name'], $directory.$file)) {
-          echo "Error file";
-        }
       }
   }
 ?>
@@ -76,18 +66,16 @@
       <div class="result"><?php echo $error; echo @$_SESSION['message']; ?></div>
       <div class="signup">
           <form class="forma-r" action="" method="post" enctype="multipart/form-data">
-              <p>name</p>
+              <p>Name</p>
               <input type="text" class="name" name="name">
-              <p>email</p>
+              <p>Email</p>
               <input type="email" name="email" class="email">
-              <p>re email</p>
+              <p>Confirm Email</p>
               <input type="email" name="remail" class="remail">
-              <p>password</p>
+              <p>Password</p>
               <input type="password" name="password" class="password">
-              <p>re password</p>
+              <p>Confirm Password</p>
               <input type="password" name="rpassword" class="rpassword">
-              <p>only .jpg image</p>
-              <input type="file" name="imagefile" value="" class="file">
               <input type="submit" name="submit" class="submit" value="Register">
           </form>
       </div>

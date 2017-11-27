@@ -5,6 +5,9 @@
   $sql = "SELECT * FROM users WHERE user_name = '$username'";
   $resource = mysqli_query($connection, $sql);
   $row = mysqli_fetch_assoc($resource);
+  if (!isset($_SESSION['username'])) {
+    header("Location: signin.php");
+  }
  ?>
 
 
@@ -67,6 +70,8 @@
               <h1 id="loadcart">Shopping Cart</h1>
               <h1 id="loadorder">Orders</h1>
               <h1 id="loadpass">Change Password</h1>
+              <h1> <a href="#">Add Product</a> </h1>
+              <h1 id="manage">Manage Your Products</h1>
             </div>
             <div class="content" id="load">
               <h1>Name: <?php echo $row['user_name']; ?></h1><br>

@@ -8,6 +8,13 @@
   transition: background-color 0.3s;
   color: #282a35;
 }
+.acc-nav h1 a{
+  text-decoration: none;
+  color: #282a35;
+}
+.acc-nav h1 a:hover{
+  color: white;
+}
 .acc-nav h1:hover{
   cursor: pointer;
   background-color: #282a35;

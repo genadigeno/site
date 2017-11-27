@@ -22,12 +22,16 @@ session_start();
     }
 
   }
+  if (isset($_POST['log_in'])) {
+    header("Location: ../DB/signin.php");
+  }
  ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
+    <link rel="stylesheet" href="../master_copy.css">
     <title></title>
     <style media="screen">
         *{
@@ -56,7 +60,7 @@ session_start();
           width: 200px;
           margin-bottom: 30px;
           height: 35px;
-          transition: background-color 0.3s; 
+          transition: background-color 0.3s;
         }input:hover{
           color: #282a35;
           background-color: white;
@@ -66,6 +70,7 @@ session_start();
     </style>
   </head>
   <body>
+    <?php include_once '../includes/header.php'; ?>
     <?php while($row = mysqli_fetch_assoc($resource)) : ?>
       <div class="image-left">
         <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
@@ -76,7 +81,14 @@ session_start();
           <p>Quantity: <?php echo $row['quantity']; ?></p>
           <p>Color: <?php echo $row['color']; ?></p>
           <p>Price: <strong><?php echo $row['price']; ?> $</strong></p>
-          <input type="submit" name="add_cart" value="Add To Cart">
+          <?php if (isset($_SESSION['username'])) { ?>
+            <input type="submit" name="add_cart" value="Add In Cart">
+          <?php } else{ ?>
+            <input type="submit" name="log_in" value="Login to Add Cart">
+          <?php } ?>
+
+        </form>
+        <form class="" action="buy.php" method="get">
           <input type="submit" name="buy" value="Buy It Now">
         </form>
       </div>

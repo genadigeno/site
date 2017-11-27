@@ -36,7 +36,6 @@
 
         }
         $result = mysqli_query($connection, $sql);
-        echo $sql;
       }
 
     // 1  LIST[]  //
@@ -102,7 +101,6 @@
                 AND price BETWEEN ".$_POST['price'][0]."";
       } // end (4,1)
 
-      echo $sql;
       $result = mysqli_query($connection, $sql);
     }
  }
