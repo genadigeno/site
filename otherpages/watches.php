@@ -19,6 +19,7 @@ session_start();
   $sql = "SELECT * FROM products LIMIT $start, $limit";
   $result = mysqli_query($connection, $sql);
 
+  /* pagination object */
   if($page == 0) $page = 1;
 
   $prev = $page - 1;
@@ -26,8 +27,6 @@ session_start();
 
   $lastpage = ceil($total_pages/$limit);
   $lpm1 = $lastpage - 1;
-
-  /* pagination object */
 
   $pagination = "";
   if ($lastpage > 1) {
@@ -109,112 +108,118 @@ session_start();
     </style>
   </head>
   <body>
-    <header>
-            <div class="main-menu">
-                <img class="logo" src="../images/logo.jpg" width="100px">
-                <nav class="navigate">
+    <div class="container" style="display: flow-root;">
+      <header>
+              <div class="main-menu">
+                  <img class="logo" src="../images/logo.jpg" width="100px">
+                  <nav class="navigate">
+                      <ul>
+                         <li class="head-li"><a href="../index.php">Home</a></li>
+                         <li class="head-li dropdown"><a href="">Watches</a>
+                             <ul class="dropdown-content">
+                                 <li><a href="">Watches</a></li>
+                                 <li><a href="">Clock</a></li>
+                                 <li><a href="">Alarm Clock</a></li>
+                             </ul>
+                          </li>
+                         <li class="head-li"><a href="">Accessories</a></li>
+                         <li class="head-li"><a href="">Sale</a></li>
+                      </ul>
+                  </nav>
+
+                  <nav class="register-nav">
                     <ul>
-                       <li class="head-li"><a href="../index.php">Home</a></li>
-                       <li class="head-li dropdown"><a href="">Watches</a>
-                           <ul class="dropdown-content">
-                               <li><a href="">Watches</a></li>
-                               <li><a href="">Clock</a></li>
-                               <li><a href="">Alarm Clock</a></li>
-                           </ul>
-                        </li>
-                       <li class="head-li"><a href="">Accessories</a></li>
-                       <li class="head-li"><a href="">Sale</a></li>
+                      <?php if(isset($_SESSION['username'])) { ?>
+                        <li class="dropdown-user"><a href="../DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s PAGE"; ?></a></li>
+                        <!-- dropdow menu form user -->
+
+                            <li class=""><a href="DB/logout.php">SIGN OUT</a></li>
+
+                        <!-- end dropdown -->
+
+                      <?php } else{ ?><li class="regist"><a href="../DB/signup.php">SIGN UP</a></li>
+                        <li class="regist"><a href="../DB/signin.php">SIGN IN</a></li>
+                      <?php } ?>
                     </ul>
-                </nav>
-
-                <nav class="register-nav">
-                  <ul>
-                    <?php if(isset($_SESSION['username'])) { ?>
-                      <li class="dropdown-user"><a href="../DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s PAGE"; ?></a></li>
-                      <!-- dropdow menu form user -->
-
-                          <li class=""><a href="DB/logout.php">SIGN OUT</a></li>
-
-                      <!-- end dropdown -->
-
-                    <?php } else{ ?><li class="regist"><a href="../DB/signup.php">SIGN UP</a></li>
-                      <li class="regist"><a href="../DB/signin.php">SIGN IN</a></li>
-                    <?php } ?>
-                  </ul>
-                </nav>
-            </div>
-        </header>
+                  </nav>
+              </div>
+          </header>
     <!-- -->
-    <section>
-        <div class="section-content">
-            <article><h1>Watches</h1></article>
-            <ul class="watch-list">
-                <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                <li><a href="watche.php?page=<?php echo $row['id']; ?>"><img src="../images/watches/<?php echo $row['image']; ?>.png" alt="">
-                  <p><?php echo $row['name']; ?></p></a>
-                  <p><?php echo $row['price']; ?></p>
-                </li>
-                <?php endwhile; ?>
-            </ul>
 
-        </div>
-        <div class="pages">
-          <?=$pagination; ?>
-        </div>
-    </section>
-    <aside>
-        <div class="aside-content">
-            <form action="" method="post" name="search" class="forma-search">
-                <input type="button" name="search" value="Search" class="search-btn">
-                <input type="search" name="search_box">
+      <section>
+          <div class="section-content">
+              <article><h1>Watches</h1></article>
+              <ul class="watch-list">
+                  <?php while($row = mysqli_fetch_assoc($result)) : ?>
+                  <li><a href="watche.php?page=<?php echo $row['id']; ?>"><img src="../images/watches/<?php echo $row['image']; ?>.png" alt="">
+                    <p><?php echo $row['name']; ?></p></a>
+                    <p><?php echo $row['price']; ?></p>
+                  </li>
+                  <?php endwhile; ?>
+              </ul>
 
-                <p style="background-color: cornsilk;
-                          padding-left: 69px;
-                          padding-bottom: 5px;
-                          padding-top: 5px;;">Departament</p>
-                <ul>
-                    <li><input type="checkbox" name="dep[]" value="women">Women</li>
-                    <li><input type="checkbox" name="dep[]" value="men">Men</li>
-                    <li><input type="checkbox" name="dep[]" value="kids">Kids</li>
-                </ul>
-                <p style="background-color: cornsilk;
-                          padding-left: 90px;
-                          padding-bottom: 5px;
-                          padding-top: 5px;">Price</p>
-                <ul>
-                    <li><input type="checkbox" name="price[]" value="0 AND 99">0 - 99$</li>
-                    <li><input type="checkbox" name="price[]" value="100 AND 199">100$ - 199</li>
-                    <li><input type="checkbox" name="price[]" value="200 AND 499">200$ - 499$</li>
-                    <li><input type="checkbox" name="price[]" value="500 AND 5000">500$ +</li>
-                    <li></li>
-                </ul>
-                <p style="background-color: cornsilk;
-                          padding-left: 70px;
-                          padding-bottom: 5px;
-                          padding-top: 5px;;">Display</p>
-                <ul>
-                    <li><input type="checkbox" name="display[]" value="numeric">Digitan</li>
-                    <li><input type="checkbox" name="display[]" value="analog">Analog</li>
-                    <li><input type="checkbox" name="display[]" value="both">Both</li>
-                    <li></li>
-                </ul>
-                <p style="background-color: cornsilk;
-                          padding-left: 90px;
-                          padding-bottom: 5px;
-                          padding-top: 5px;;">Color</p>
-                <ul>
-                    <li><input type="checkbox" name="color[]" value="white">White</li>
-                    <li><input type="checkbox" name="color[]" value="black">Black</li>
-                    <li><input type="checkbox" name="color[]" value="gray">Gray</li>
-                    <li><input type="checkbox" name="color[]" value="other">Others</li>
-                    <li></li>
-                </ul>
-                <input type="submit" name="submit" value="Filter" class="filter-btn">
-            </form>
-        </div>
-        <div class="">
+          </div>
+          <div class="pages">
+            <?=$pagination; ?>
+          </div>
+      </section>
+      <aside>
+          <div class="aside-content">
+              <form action="" method="post" name="search" class="forma-search">
+                  <input type="button" name="search" value="Search" class="search-btn">
+                  <input type="search" name="search_box">
 
-        </div>
-    </aside>
+                  <p style="background-color: cornsilk;
+                            padding-left: 69px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;;">Departament</p>
+                  <ul>
+                      <li><input type="checkbox" name="dep[]" value="women">Women</li>
+                      <li><input type="checkbox" name="dep[]" value="men">Men</li>
+                      <li><input type="checkbox" name="dep[]" value="kids">Kids</li>
+                  </ul>
+                  <p style="background-color: cornsilk;
+                            padding-left: 90px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;">Price</p>
+                  <ul>
+                      <li><input type="checkbox" name="price[]" value="0 AND 99">0 - 99$</li>
+                      <li><input type="checkbox" name="price[]" value="100 AND 199">100$ - 199</li>
+                      <li><input type="checkbox" name="price[]" value="200 AND 499">200$ - 499$</li>
+                      <li><input type="checkbox" name="price[]" value="500 AND 5000">500$ +</li>
+                      <li></li>
+                  </ul>
+                  <p style="background-color: cornsilk;
+                            padding-left: 70px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;;">Display</p>
+                  <ul>
+                      <li><input type="checkbox" name="display[]" value="numeric">Digitan</li>
+                      <li><input type="checkbox" name="display[]" value="analog">Analog</li>
+                      <li><input type="checkbox" name="display[]" value="both">Both</li>
+                      <li></li>
+                  </ul>
+                  <p style="background-color: cornsilk;
+                            padding-left: 90px;
+                            padding-bottom: 5px;
+                            padding-top: 5px;;">Color</p>
+                  <ul>
+                      <li><input type="checkbox" name="color[]" value="white">White</li>
+                      <li><input type="checkbox" name="color[]" value="black">Black</li>
+                      <li><input type="checkbox" name="color[]" value="gray">Gray</li>
+                      <li><input type="checkbox" name="color[]" value="other">Others</li>
+                      <li></li>
+                  </ul>
+                  <input type="submit" name="submit" value="Filter" class="filter-btn">
+              </form>
+          </div>
+          <div class="">
+
+          </div>
+      </aside>
+    </div>
+    <footer>
+      <?php include_once '../includes/footer.php'; ?>
+    </footer>
   </body>
 </html>

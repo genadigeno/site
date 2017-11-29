@@ -76,6 +76,7 @@ session_start();
         <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
       </div>
       <div class="form-right">
+        <!-- form -->
         <form class="form" action="" method="post">
           <h1><?php echo $row['name']; ?></h1>
           <p>Quantity: <?php echo $row['quantity']; ?></p>
@@ -86,9 +87,10 @@ session_start();
           <?php } else{ ?>
             <input type="submit" name="log_in" value="Login to Add Cart">
           <?php } ?>
-
         </form>
+        <!-- end -->
         <form class="" action="buy.php" method="get">
+          <input name="product" value="<?php echo $row['id']; ?>" type="hidden">
           <input type="submit" name="buy" value="Buy It Now">
         </form>
       </div>

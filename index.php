@@ -98,13 +98,9 @@
 
     <!-- -->
     <footer>
-        <p>&copy; Copyrigth 2017</p>
-        <ul>
-            <li><img src="images/socnet/fb.png"></li>
-            <li><img src="images/socnet/g+.png"></li>
-            <li><img src="images/socnet/in.png"></li>
-        </ul>
+      <?php include_once 'includes/footer.php'; ?>
     </footer>
+
     <!-- -->
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/unslider-min.js"></script>

@@ -8,7 +8,7 @@
       $username = $_POST['username'];
       $password = $_POST['password'];
 
-      $sql = "SELECT * FROM users WHERE user_name = '$username' AND user_password = '$password'";
+      $sql = "SELECT * FROM users WHERE user_name = '".$username."' AND user_password = '".$password."'";
       $result = mysqli_query($connection, $sql);
       $row = mysqli_fetch_assoc($result);
       if (mysqli_num_rows($result) == 1) {
@@ -16,7 +16,7 @@
         $_SESSION['user_id'] = $row['user_id'];
         header("Location: ../index.php");
       }else {
-        echo "err";
+        echo $sql;
       }
     }
     if (isset($_POST['reg'])) {
