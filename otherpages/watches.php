@@ -99,7 +99,11 @@ session_start();
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
+      <link rel="stylesheet" href="../styles/headerstyle.css">
     <link rel="stylesheet" href="../styles/watchesstyle.css">
+    <link rel="stylesheet" href="../styles/foot.css">
+      <script src="https://use.fontawesome.com/71aa464b87.js"></script>
+
     <title>ინტერნეტ მაღაზია JM</title>
     <style media="screen">
       *{
@@ -108,47 +112,15 @@ session_start();
     </style>
   </head>
   <body>
-    <div class="container" style="display: flow-root;">
+    <div class="containeri" style="display: flow-root;">
       <header>
-              <div class="main-menu">
-                  <img class="logo" src="../images/logo.jpg" width="100px">
-                  <nav class="navigate">
-                      <ul>
-                         <li class="head-li"><a href="../index.php">Home</a></li>
-                         <li class="head-li dropdown"><a href="">Watches</a>
-                             <ul class="dropdown-content">
-                                 <li><a href="">Watches</a></li>
-                                 <li><a href="">Clock</a></li>
-                                 <li><a href="">Alarm Clock</a></li>
-                             </ul>
-                          </li>
-                         <li class="head-li"><a href="">Accessories</a></li>
-                         <li class="head-li"><a href="">Sale</a></li>
-                      </ul>
-                  </nav>
-
-                  <nav class="register-nav">
-                    <ul>
-                      <?php if(isset($_SESSION['username'])) { ?>
-                        <li class="dropdown-user"><a href="../DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s PAGE"; ?></a></li>
-                        <!-- dropdow menu form user -->
-
-                            <li class=""><a href="DB/logout.php">SIGN OUT</a></li>
-
-                        <!-- end dropdown -->
-
-                      <?php } else{ ?><li class="regist"><a href="../DB/signup.php">SIGN UP</a></li>
-                        <li class="regist"><a href="../DB/signin.php">SIGN IN</a></li>
-                      <?php } ?>
-                    </ul>
-                  </nav>
-              </div>
-          </header>
+          <?php include "../includes/header.php"; ?>
+      </header>
     <!-- -->
-
+        <hr>
       <section>
           <div class="section-content">
-              <article><h1>Watches</h1></article>
+              <article><h1 style="text-align: center"></h1></article>
               <ul class="watch-list">
                   <?php while($row = mysqli_fetch_assoc($result)) : ?>
                   <li><a href="watche.php?page=<?php echo $row['id']; ?>"><img src="../images/watches/<?php echo $row['image']; ?>.png" alt="">
@@ -167,7 +139,7 @@ session_start();
           <div class="aside-content">
               <form action="" method="post" name="search" class="forma-search">
                   <input type="button" name="search" value="Search" class="search-btn">
-                  <input type="search" name="search_box">
+                  <input type="search" name="search_box" class="search-box">
 
                   <p style="background-color: cornsilk;
                             padding-left: 69px;
@@ -221,5 +193,17 @@ session_start();
     <footer>
       <?php include_once '../includes/footer.php'; ?>
     </footer>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+    <script>
+        $('.container').click(function(){
+            $('.responsive-menu').toggle();
+        });
+    </script>
   </body>
 </html>

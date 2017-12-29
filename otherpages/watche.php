@@ -31,8 +31,10 @@ session_start();
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../fonts/CaviarDreams/styles.css">
+      <link rel="stylesheet" href="../styles/foot.css">
     <link rel="stylesheet" href="../master_copy.css">
-    <title></title>
+      <script src="https://use.fontawesome.com/71aa464b87.js"></script>
+    <title>E-Shop Watches</title>
     <style media="screen">
         *{
           font-family: 'CaviarDreams-Bold';
@@ -70,30 +72,47 @@ session_start();
     </style>
   </head>
   <body>
-    <?php include_once '../includes/header.php'; ?>
-    <?php while($row = mysqli_fetch_assoc($resource)) : ?>
-      <div class="image-left">
-        <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
-      </div>
-      <div class="form-right">
-        <!-- form -->
-        <form class="form" action="" method="post">
-          <h1><?php echo $row['name']; ?></h1>
-          <p>Quantity: <?php echo $row['quantity']; ?></p>
-          <p>Color: <?php echo $row['color']; ?></p>
-          <p>Price: <strong><?php echo $row['price']; ?> $</strong></p>
-          <?php if (isset($_SESSION['username'])) { ?>
-            <input type="submit" name="add_cart" value="Add In Cart">
-          <?php } else{ ?>
-            <input type="submit" name="log_in" value="Login to Add Cart">
-          <?php } ?>
-        </form>
-        <!-- end -->
-        <form class="" action="buy.php" method="get">
-          <input name="product" value="<?php echo $row['id']; ?>" type="hidden">
-          <input type="submit" name="buy" value="Buy It Now">
-        </form>
-      </div>
-    <?php endwhile; ?>
+  <header><?php include_once '../includes/header.php'; ?></header>
+    <section>
+        <?php while($row = mysqli_fetch_assoc($resource)) : ?>
+            <div class="image-left">
+                <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
+            </div>
+            <div class="form-right">
+                <!-- form -->
+                <form class="form" action="" method="post">
+                    <h1><?php echo $row['name']; ?></h1>
+                    <p>Quantity: <?php echo $row['quantity']; ?></p>
+                    <p>Color: <?php echo $row['color']; ?></p>
+                    <p>Price: <strong><?php echo $row['price']; ?> $</strong></p>
+                    <?php if (isset($_SESSION['username'])) { ?>
+                        <input type="submit" name="add_cart" value="Add In Cart">
+                    <?php } else{ ?>
+                        <input type="submit" name="log_in" value="Login to Add Cart">
+                    <?php } ?>
+                </form>
+                <!-- end -->
+                <form class="" action="buy.php" method="get">
+                    <input name="product" value="<?php echo $row['id']; ?>" type="hidden">
+                    <input type="submit" name="buy" value="Buy It Now">
+                </form>
+            </div>
+        <?php endwhile; ?>
+    </section>
+  <footer>
+      <?php include "../includes/footer.php"?>
+  </footer>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+      function myFunction(x) {
+          x.classList.toggle("change");
+      }
+  </script>
+  <script>
+      $('.container').click(function(){
+          $('.responsive-menu').toggle();
+      });
+  </script>
   </body>
+
 </html>

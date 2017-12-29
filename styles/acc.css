@@ -1,27 +1,51 @@
 .acc-nav{
   float: left;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 50px;
 
 }
-.acc-nav h1{
+.acc-nav h3{
   transition: background-color 0.3s;
   color: #282a35;
 }
-.acc-nav h1 a{
+.acc-nav h3 a{
   text-decoration: none;
   color: #282a35;
 }
-.acc-nav h1 a:hover{
+.acc-nav h3 a:hover{
   color: white;
 }
-.acc-nav h1:hover{
+.acc-nav h3:hover{
   cursor: pointer;
   background-color: #282a35;
   color: white;
 }
 .content{
   float: right;
-  margin-right: 20%;
+  margin-right: 10%;
   margin-top: 50px;
+  width: 40%;
+}
+table{
+  text-align: center;
+  width: 100%;
+}
+table,th,td{
+  border-top: 1px solid #282a35;
+  border-collapse: collapse;
+}
+table a{
+  text-decoration: none;
+  font-size: 12px;
+  color: #282a35;
+}
+table .cart-del{
+  color: #282a35;
+  border: 1px solid #282a35;
+  padding: 1px 4px;
+  transition: background-color 0.3s;
+}
+table .cart-del:hover{
+  background-color: #282a35;
+  color: white;
 }

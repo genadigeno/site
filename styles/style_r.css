@@ -1,5 +1,4 @@
 .signup{
-    background-color: #282a35;
     width: 30%;
     height: 100%;
     margin-left: 33%;
@@ -13,26 +12,24 @@ p{
 .email, .name, .remail, .password, .rpassword{
     width: 300px;
     height: 20px;
-    border-radius: 1px;
-    background: #c2edef;
+    border: 1px solid;
 }
 .submit{
-     width: 325px;
-     height:2em;
-	   margin:60px 40px;
-	   cursor:pointer;
-	   font-size:1em;
-	   border:1px solid #eee;
-     padding: 0 30px;
-	   background:#eee;
-	   border-radius:4px;
-	   line-height:2em;
-	   border:1px solid #aaa;
-   }.submit:hover{
-	-webkit-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-     -khtml-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       -moz-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-         -o-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-            box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       background: cornsilk;
+    height:2em;
+    margin:60px 40px;
+    cursor:pointer;
+    font-size:1em;
+    padding: 0 30px;
+    background:#eee;
+    line-height:2em;
+    border:1px solid #aaa;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+.submit:hover{
+    background-color: #282a35;
+    color: white;
+}
+.signup p{
+    color: #282a35;
 }

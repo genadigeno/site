@@ -1,0 +1,38 @@
+/* ------------ ფუთერი -----------*/
+footer{
+    background-color: #282a35;
+    color: white;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flow-root;
+}
+.top-footer{
+    overflow: hidden;
+    margin-left: 25%;
+}
+.top-footer div{
+    color: white;
+    float: left;
+    margin-left: 30px;
+    width: 20%;
+}
+.top-footer div ul{
+    list-style: none;
+}
+.top-footer div ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.top-footer div ul{
+    padding-left: 0px;
+}
+.third ul li p{
+    font-size: 12px;
+}
+
+.bottom-footer{
+    text-align: center;
+    padding-bottom: 5px;
+}

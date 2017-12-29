@@ -13,34 +13,48 @@
   $res = mysqli_query($connection, $sql);
 
 
-
 ?>
 
 <?php if (isset($_SESSION['username'])): ?>
-  <ul style="list-style: none;">
-  <?php while ($var = mysqli_fetch_assoc($res)): ?>
-    <?php
-    $value = $var['product_id'];
-    $sql4 = "SELECT * FROM products WHERE id = '$value'";
-    $res4 = mysqli_query($connection, $sql4);
-    $getting = mysqli_fetch_assoc($res4);
-    $product_price = $getting['price'];
-    $product_name = $getting['name'];
-    $id = $getting['id'];
-   ?>
-      <li>
-        <a href="../otherpages/watche.php?page=<?=$id ?>">
-          <div class="product">
-             <img src="../images/watches/<?php echo $getting['image']; ?>.png" width="100px"  style="float: left; margin-left: 5px;">
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
 
-          </div>
-        </a>
-        <form class="" action="../otherpages/delcart.php" method="post">
-          <input type="submit" name="remove" value="Remove From Cart">
-          <input type="hidden" name="delete" value="<?php echo $var['id'] ?>">
-        </form>
-      </li>
+        <?php while ($var = mysqli_fetch_assoc($res)): ?>
+        <?php
+            $value = $var['product_id'];
+            $sql4 = "SELECT * FROM products WHERE id = '$value'";
+            $res4 = mysqli_query($connection, $sql4);
+            $getting = mysqli_fetch_assoc($res4);
+            $product_price = $getting['price'];
+            $product_name = $getting['name'];
+            $id = $getting['id'];
 
-  <?php endwhile; ?>
-  </ul>
+        ?>
+        <tr>
+            <td>
+                <a href="../otherpages/watche.php?page=<?=$id ?>" class="cart-info">
+                    <img src="../images/watches/<?php echo $getting['image']; ?>.png" width="100px"  style="float: left; margin-left: 5px;">
+                </a>
+            </td>
+            <td>
+                <a href="../otherpages/watche.php?page=<?=$id ?>"><?=$getting['price'];?> $</a>
+            </td>
+            <td>
+                <a href="../otherpages/watche.php?page=<?=$id ?>"><?=$getting['name'];?></a>
+            </td>
+            <td>
+                <span><?=$var['quantity'];?></span>
+            </td>
+            <td>
+                <a href="../DB/account.php?delete=<?=$var['id']; ?>" class="cart-del">Remove From Cart</a>
+            </td>
+        </tr>
+        <?php endwhile; ?>
+    </table>
 <?php endif; ?>

@@ -1,78 +1,7 @@
 body{
   background-color: white;
 }
-header{
-    background-color: white;
-    display: block;
-    margin: 0 auto;
-}
-.center-block-main{
-  margin: 0 auto;
-  max-width: 998px;
-
-}
-.main-menu ul{
-   list-style: none;
-}
-.logo{
-    display: inline-block;
-    vertical-align: middle;
-}
-.navigate{
-    display: inline-block;
-    vertical-align: middle;
-}
-.navigate ul{
-    display: inline-flex;
-}.navigate ul li{
-    padding-right: 20px;
-}
-.register-nav{
-    padding-top: 9px;
-    padding-right: 20px;
-    float: right;
-    display: inline-block;
-}.register-nav ul{
-    display: inline-flex;
-}.register-nav ul li:first-child{
-    padding-right: 20px;
-}
-.navigate ul li a{
-    text-decoration: none;
-  border-bottom: 1px solid #ffffff;
-  color: #282a35;
-  padding: 20px 15px;
-  display: block;
-}.navigate ul li a:hover{
-    background-color: #ffffe6;
-  border-bottom: 1px solid #282a35;
-}
-.register-nav ul li a{
-    text-decoration: none;
-  border-bottom: 1px solid #ffffff;
-  color: #282a35;
-  padding: 20px 15px;
-  display: block;
-}.register-nav ul li a:hover{
-    background-color: #ffffe6;
-  border-bottom: 1px solid #282a35;
-}
-.dropdown{
-    position: relative;
-    display: inline-block;
-}.dropdown-content{
-    visibility: hidden;
-    position: absolute;
-}.dropdown-content li:hover{
-    background-color: #fff;
-}
-.dropdown:hover ul{
-    display: block;
-    visibility: visible;
-    background-color: #fff;
-    z-index: 1;
-    z-index: 10px;
-}
+/*-------Section--------*/
 section{
   background-color: white;
   display: inline-block;
@@ -104,6 +33,7 @@ section ul li p{
 /* aside */
 aside{
   float: right;
+  width: 38%;
   display: inline-block;
 }
 aside ul{
@@ -176,25 +106,9 @@ div.pagination span.disabled{
 /* end */
 
 
-/*footer{
-  background-color: darkgrey;
-  margin-top: 30px;
-  display: flow-root;
-  border-radius: 5px;
-}footer ul{
-  display: inline-flex;
-  float: right;
-  /* vertical-align: middle; */
-  /*margin-right: 40px;
-  list-style: none;
-}footer ul li{
-    margin-right: 15px;
-    padding: 0 5px;
+@media only screen and (max-width: 1080px){
+  .forma-search .search-box{
+    margin-left: 20px;
+    width: 200px;
+  }
 }
-footer ul li img{
-    width: 45px;
-}footer p{
-    display: inline-block;
-    margin-left: 40%;
-    font-size: x-large;
-}*/

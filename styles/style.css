@@ -1,5 +1,4 @@
 .signin{
-    background-color: #282a35;
     width: 30%;
     height: 500px;
     margin-left: 33%;
@@ -12,56 +11,28 @@
 
 }
    .submit{
-     width: 30%;;
-     height:2em;
-	   margin:60px 0;
-	   cursor:pointer;
-	   font-size:1em;
-	   border:1px solid #eee;
-     padding: 0 30px;
-	   background:#eee;
-	   border-radius:4px;
-	   line-height:2em;
-	   border:1px solid #aaa;
+        width: 30%;
+        height:2em;
+        margin:10px 0;
+        cursor:pointer;
+        font-size:1em;
+        line-height:2em;
+        border:1px solid #282a35;
+       background-color: white;
+       transition: background-color 0.3s;
    }
    .submit:hover{
-	-webkit-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-     -khtml-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       -moz-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-         -o-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-            box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       background: cornsilk;
+        background-color: #282a35;
+       color: white;
 }.email{
     width: 80%;
     height: 20px;
-    border-radius: 1px;
-    background: #c2edef;
+    border: 1px solid;
 }.password{
     width: 80%;
     height: 20px;
-    border-radius: 1px;
-    background: #c2edef;
+    border: 1px solid;
 }
-.button{
-    width: 50%;
-    padding: 2px 10px;
-	   cursor:pointer;
-	   font-size:1em;
-	   border:1px solid #eee;
-       padding: 0 30px;
-	   background:#eee;
-	   border-radius:4px;
-	   line-height:2em;
-    font-family: sans-serif;
-    border:1px solid #aaa;
-}.button:hover{
-	-webkit-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-     -khtml-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       -moz-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-         -o-box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-            box-shadow:rgb(190, 209, 158) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-       background: cornsilk;
-}
-p{
-
+.signin p{
+    color: #282a35;
 }
