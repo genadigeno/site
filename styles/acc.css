@@ -24,7 +24,7 @@
   float: right;
   margin-right: 10%;
   margin-top: 50px;
-  width: 40%;
+  width: 60%;
 }
 table{
   text-align: center;
@@ -33,6 +33,9 @@ table{
 table,th,td{
   border-top: 1px solid #282a35;
   border-collapse: collapse;
+}
+table th, td{
+  padding-right: 10px;
 }
 table a{
   text-decoration: none;
@@ -44,8 +47,39 @@ table .cart-del{
   border: 1px solid #282a35;
   padding: 1px 4px;
   transition: background-color 0.3s;
+  background-color: white;
+  font-size: 12px;
 }
 table .cart-del:hover{
   background-color: #282a35;
   color: white;
+}
+.passw, .re-passw, .change{
+  margin-bottom: 40px;
+}
+.passw{
+  margin-left: 63px;
+}
+.change{
+  margin-left: 33%;
+  border: 1px solid #282a35;
+  border-radius: 0px;
+  transition: background-color 0.3s;
+}
+.change:hover{
+  background-color: #282a35;
+  color: white;
+  cursor: pointer;
+}
+form .submit{
+  transition: background-color 0.3s;
+  background-color: white;
+
+  border: 1px solid #282a35;
+  border-radius: 0px;
+}
+form .submit:hover{
+  background-color: #282a35;
+  color: white;
+  cursor: pointer;
 }

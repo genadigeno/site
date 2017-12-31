@@ -5,6 +5,9 @@ session_start();
   $page = $_GET['page'];
   $sql = "SELECT * FROM products WHERE id = ".$page."";
   $resource  = mysqli_query($connection, $sql);
+//  $product = mysqli_fetch_assoc($resource);
+//  $product_quantity_in_products = $product['quantity'];
+
   if (isset($_POST['add_cart'])) {
     // user id
     $sql2 = "SELECT user_id FROM users WHERE user_name = '$name'";
@@ -16,9 +19,31 @@ session_start();
     $res2 = mysqli_query($connection, $sql3);
     $rigi = mysqli_fetch_assoc($res2);
     $product_id = $rigi['id'];
-    $sql1 = "INSERT INTO addcart(user_id,product_id) VALUES('$id','$product_id')";
-    if (mysqli_query($connection, $sql1)) {
-      header("Location: ../DB/account.php");
+
+    $quantity = $_POST['quantity'];
+
+    $query_if_in_cart = "SELECT * FROM addcart WHERE user_id = '$id' AND product_id = '$product_id'";
+    $resource_if_in_cart = mysqli_query($connection, $query_if_in_cart);
+    $product_in_cart = mysqli_fetch_assoc($resource_if_in_cart);
+    $product_quantity_in_cart = $product_in_cart['quantity'];
+
+    if (mysqli_num_rows($resource_if_in_cart) < 1){
+        $sql1 = "INSERT INTO addcart(user_id, product_id , quantity) VALUES('$id', '$product_id', '$quantity')";
+        if (mysqli_query($connection, $sql1)) {
+            header("Location: ../DB/account.php");
+        }
+    }else{
+        $quantity += $product_quantity_in_cart;
+
+//        if ($quantity <= $product_quantity_in_products){
+            $sql1 = "UPDATE addcart SET quantity = '$quantity' WHERE user_id = '$id' AND product_id = '$product_id'";
+            if (mysqli_query($connection, $sql1)) {
+                header("Location: ../DB/account.php");
+            }
+//        }
+//        else{
+//            echo "<script>alert('Products is not enough to add in yout cart');</script>";
+//        }
     }
 
   }
@@ -55,7 +80,7 @@ session_start();
           width: 100%;
           color: #282a35;
         }
-        input{
+        .styled{
           color: white;
           font-weight: bold;
           background: #282a35;
@@ -63,7 +88,7 @@ session_start();
           margin-bottom: 30px;
           height: 35px;
           transition: background-color 0.3s;
-        }input:hover{
+        }.styled:hover{
           color: #282a35;
           background-color: white;
           border: 1px solid #282a35;
@@ -82,19 +107,14 @@ session_start();
                 <!-- form -->
                 <form class="form" action="" method="post">
                     <h1><?php echo $row['name']; ?></h1>
-                    <p>Quantity: <?php echo $row['quantity']; ?></p>
+                    <p>Quantity: <input type="number" max="<?=$row['quantity'];?>" min="1" value="1" name="quantity" style="width: 50px;">of <?=$row['quantity'];?></p>
                     <p>Color: <?php echo $row['color']; ?></p>
                     <p>Price: <strong><?php echo $row['price']; ?> $</strong></p>
                     <?php if (isset($_SESSION['username'])) { ?>
-                        <input type="submit" name="add_cart" value="Add In Cart">
+                        <input type="submit" name="add_cart" value="Add In Cart" class="styled">
                     <?php } else{ ?>
-                        <input type="submit" name="log_in" value="Login to Add Cart">
+                        <input type="submit" name="log_in" value="Login to Add Cart" class="styled">
                     <?php } ?>
-                </form>
-                <!-- end -->
-                <form class="" action="buy.php" method="get">
-                    <input name="product" value="<?php echo $row['id']; ?>" type="hidden">
-                    <input type="submit" name="buy" value="Buy It Now">
                 </form>
             </div>
         <?php endwhile; ?>

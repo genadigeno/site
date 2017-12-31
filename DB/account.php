@@ -8,17 +8,37 @@
         $sql = "SELECT * FROM users WHERE user_name = '$username'";
         $resource = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($resource);
+//        მომხმარებლის კარტიდან დამატებული პროდუქტის ამოშლა
+        if (isset($_GET['delete'])){
+            $es = $_GET['delete'];
+            $washla = "DELETE FROM addcart WHERE id = '$es'";
+            mysqli_query($connection, $washla);
+            echo $es;
+
+            header("Location: account.php");
+        }
+//        მომხმარებლის პაროლის შეცვლა
+        if (isset($_GET['change'])){
+            $new_pass = $_GET['newpass'];
+            $re_new_pass = $_GET['re_newpass'];
+            if ($new_pass == $re_new_pass) {
+                $query = "UPDATE users SET user_password = '$new_pass' WHERE user_name = '$username'";
+                if (mysqli_query($connection, $query)){
+                    echo "<script>alert('Password has been changes successfully :)');</script>";
+                }
+                else{
+                    echo "<script>alert('Occured Some Error :(');</script>";
+                }
+            }
+            else{
+                echo "<script>alert('Passwords Does Not Match ! :|');</script>";
+            }
+            echo "<script>window.location = 'account.php';</script>";
+        }
     }
 
 
-  if (isset($_GET['delete'])){
-      $es = $_GET['delete'];
-      $washla = "DELETE FROM addcart WHERE id = '$es'";
-      mysqli_query($connection, $washla);
-      echo $es;
 
-      header("Location: account.php");
-  }
  ?>
 
 
@@ -42,7 +62,7 @@
   <body>
     <header>
         <?php include "../includes/header.php"?>
-        </header>
+    </header>
         <section>
           <?php if(isset($_SESSION['username'])) { ?>
             <div class="acc-nav">
@@ -79,6 +99,11 @@
                     $("#load").html(result);
                 }});
             });
+              $("#loadorder").click(function(){
+                  $.ajax({url: "../user/orders.php", success: function(result){
+                      $("#load").html(result);
+                  }});
+              });
             $("#loadpass").click(function() {
               $.ajax({url: "../user/changepass.php", success: function(result) {
                 $("#load").html(result);

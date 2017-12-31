@@ -19,10 +19,10 @@
     <nav class="register-nav">
         <ul>
             <?php if(isset($_SESSION['username'])) { ?>
-                <li class="dropdown-user"><a href="../DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s PAGE"; ?></a></li>
+                <li class="dropdown-user"><a href="../DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s page"; ?></a></li>
                 <!-- dropdown მენიუ -->
 
-                <li class=""><a href="../DB/logout.php">Sing Out</a></li>
+                <li class=""><a href="../DB/logout.php">Sign Out</a></li>
 
                 <!-- dropdown-ს დასასრული -->
 

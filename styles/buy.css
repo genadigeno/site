@@ -1,0 +1,25 @@
+.content{
+    width: 50%;
+    margin: 0 28%;
+
+    font-family: CaviarDreams-Bold;
+}
+.content input, p{
+    width: 33%;
+    margin: 0 33%;
+    text-align: center;
+}
+.content .submit{
+    width: 17%;
+    margin: 0 42%;
+    border: 1px solid #282a35;
+    transition: background-color 0.3s;
+}
+.content .submit:hover{
+    background-color: #282a35;
+    color: white;
+    cursor: pointer;
+}
+.bordered{
+    border: 1px solid #282a35;
+}
