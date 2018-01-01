@@ -37,24 +37,24 @@
       }
 
       if(mysqli_query($connection, $sql)){
-          $quantity = intval($quantity);
+        $quantity = intval($quantity);
         $quantity_product = $quantity_product - $quantity;
+
         $update_product = "UPDATE products SET quantity = '$quantity_product' WHERE id = '$id'";
         mysqli_query($connection, $update_product);
+
         $delete_from_cart = "DELETE FROM addcart WHERE product_id = '$id'";
         mysqli_query($connection, $delete_from_cart);
+
         $delete_product = "DELETE FROM products WHERE quantity = 0";
         mysqli_query($connection, $delete_product);
+
         header("Location: ../DB/account.php");
       }
       else {
         echo $sql;
       }
   }
-    if (isset($_GET['allofproducts'])){
-
-      print_r($_GET['allproducts']);
-    }
 ?>
 
 

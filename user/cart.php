@@ -16,7 +16,7 @@
 ?>
 
 <?php if (isset($_SESSION['username'])): ?>
-    <form action="" method="get" style="width: 100%;">
+    <form action="../otherpages/buyall.php" method="get" style="width: 100%;">
         <table>
             <tr>
                 <th>Image</th>
@@ -48,7 +48,7 @@
                     </a>
                 </td>
                 <td>
-                    <input type="checkbox" name="allproducts[<?=$id;?>]" value="<?=$var['quantity'];;?>">
+                    <input type="checkbox" name="allproducts[]" value="<?=$id.','.$var['quantity'];?>">
                     <a href="../otherpages/watche.php?page=<?=$id ?>"><?=$getting['name'];?></a>
                 </td>
                 <td>
@@ -71,7 +71,7 @@
             <?php endwhile; ?>
         </table>
         <br>
-        <input type="submit" value="Buy Checked" name="allofproducts" class="submit">
-        <p style="float: right">Total: <?=$total;?> $</p>
+        <input type="submit" value="Buy Checked" name="totalproducts" class="submit">
+        <p style="float: right">Total: <?=@$total;?> $</p>
     </form>
 <?php endif; ?>
