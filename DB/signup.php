@@ -39,7 +39,7 @@
               mysqli_query($connection, $register);
               $_SESSION['message'] = "registered";
               $_SESSION['username'] = $username;
-              header("Location: account.php");
+              echo "<script>window.location = 'account.php';</script>";
           }
          }
       }

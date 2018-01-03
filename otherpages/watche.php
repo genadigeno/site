@@ -30,7 +30,7 @@ session_start();
     if (mysqli_num_rows($resource_if_in_cart) < 1){
         $sql1 = "INSERT INTO addcart(user_id, product_id , quantity) VALUES('$id', '$product_id', '$quantity')";
         if (mysqli_query($connection, $sql1)) {
-            header("Location: ../DB/account.php");
+            echo "<script>window.location = '../DB/account.php';</script>";
         }
     }else{
         $quantity += $product_quantity_in_cart;
@@ -38,7 +38,7 @@ session_start();
 //        if ($quantity <= $product_quantity_in_products){
             $sql1 = "UPDATE addcart SET quantity = '$quantity' WHERE user_id = '$id' AND product_id = '$product_id'";
             if (mysqli_query($connection, $sql1)) {
-                header("Location: ../DB/account.php");
+                echo "<script>window.location = '../DB/account.php';</script>";
             }
 //        }
 //        else{
@@ -48,7 +48,7 @@ session_start();
 
   }
   if (isset($_POST['log_in'])) {
-    header("Location: ../DB/signin.php");
+      echo "<script>window.location = '../DB/signin.php';</script>";
   }
  ?>
 <!DOCTYPE html>
@@ -101,7 +101,7 @@ session_start();
     <section>
         <?php while($row = mysqli_fetch_assoc($resource)) : ?>
             <div class="image-left">
-                <img src="../images/watches/<?php echo $row['image']; ?>.png" width="200px">
+                <img src="../images/watches/<?php echo $row['image']; ?>" width="200px">
             </div>
             <div class="form-right">
                 <!-- form -->

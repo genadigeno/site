@@ -32,7 +32,7 @@
         ?>
         <tr>
             <td>
-                <img src="../images/watches/<?php echo $getting['image']; ?>.png" width="100px"  style="float: left; margin-left: 5px;">
+                <img src="../images/watches/<?php echo $getting['image']; ?>" width="100px"  style="float: left; margin-left: 5px;">
             </td>
             <td>
                 <?=$getting['price'];?> $

@@ -55,7 +55,7 @@
                 <nav class="register-nav">
                     <ul>
                       <?php if(isset($_SESSION['username'])) { ?>
-                        <li class="dropdown-user"><a href="DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s PAGE"; ?></a></li>
+                        <li class="dropdown-user"><a href="DB/account.php"><?php echo strtoupper($_SESSION['username'])."'s page"; ?></a></li>
                         <!-- dropdown მენიუ -->
 
                             <li class=""><a href="DB/logout.php">Sign Out</a></li>
@@ -125,7 +125,7 @@
 
               <ul>
                 <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                    <li><a href="otherpages/watche.php?page=<?php echo $row['id']; ?>"><img src="images/watches/<?php echo $row['image']; ?>.png" alt="">
+                    <li><a href="otherpages/watche.php?page=<?php echo $row['id']; ?>"><img src="images/watches/<?php echo $row['image']; ?>" alt="">
                       <p><?php echo $row['name']; ?></p></a>
                       <p><?php echo $row['price']; ?> $</p>
                     </li>

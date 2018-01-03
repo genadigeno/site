@@ -49,7 +49,8 @@
         $delete_product = "DELETE FROM products WHERE quantity = 0";
         mysqli_query($connection, $delete_product);
 
-        header("Location: ../DB/account.php");
+
+        echo "<script>window.location = '../DB/account.php';</script>";
       }
       else {
         echo $sql;

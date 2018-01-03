@@ -83,3 +83,22 @@ form .submit:hover{
   color: white;
   cursor: pointer;
 }
+.add-form form{
+  width: 100%;
+}
+.form-content{
+  margin: 0 20%;
+}
+.form-content *{
+  margin-bottom: 50px;
+}
+.form-content .button{
+  margin: 0 30%;
+  border: 1px solid #282a35;
+  transition: background-color 0.3s;
+}
+.form-content .button:hover{
+  background-color: #282a35;
+  color: white;
+  cursor: pointer;
+}

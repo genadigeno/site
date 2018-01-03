@@ -44,7 +44,7 @@
             <tr>
                 <td>
                     <a href="../otherpages/watche.php?page=<?=$id ?>" class="cart-info">
-                        <img src="../images/watches/<?php echo $getting['image']; ?>.png" width="100px"  style="float: left; margin-left: 5px;">
+                        <img src="../images/watches/<?php echo $getting['image']; ?>" width="100px"  style="float: left; margin-left: 5px;">
                     </a>
                 </td>
                 <td>

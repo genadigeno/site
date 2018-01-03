@@ -2,7 +2,7 @@
 <?php
   session_start();
     if (!isset($_SESSION['username'])) {
-        header("Location: signin.php");
+        echo "<script>window.location = 'signin.php';</script>";
     }else{
         $username = $_SESSION['username'];
         $sql = "SELECT * FROM users WHERE user_name = '$username'";
@@ -15,7 +15,7 @@
             mysqli_query($connection, $washla);
             echo $es;
 
-            header("Location: account.php");
+            echo "<script>window.location = 'account.php';</script>";
         }
 //        მომხმარებლის პაროლის შეცვლა
         if (isset($_GET['change'])){
@@ -34,6 +34,48 @@
                 echo "<script>alert('Passwords Does Not Match ! :|');</script>";
             }
             echo "<script>window.location = 'account.php';</script>";
+        }
+//        პროდუქტის დამატება მომხმარებლის მიერ
+        if (isset($_POST['addproduct'])){
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+//            $price = floatval($price);
+            $departament = $_POST['departament'];
+            $color = $_POST['color'];
+            $display = $_POST['display'];
+            $user_id = $_SESSION['user_id'];
+            $quantity = $_POST['quantity'];
+//            $quantity = intval($quantity);
+            $file = $_FILES['image'];
+            $rootPath = $_SERVER['DOCUMENT_ROOT'];
+            $folder = $rootPath."/site/images/watches/";
+
+
+
+            if ($file['size'] < 150000){
+
+                $basename = basename($file['name']);
+
+                if(!file_exists($folder.$basename)){
+
+                    if (move_uploaded_file($file['tmp_name'], $folder.$basename)){
+
+                        $sub_basename = basename($file['name'], '.png');
+                        $insert_product = "INSERT INTO products (user_id, name, image, departament, price, display, color, quantity)
+                                              VALUES ('$user_id', '$name', '$basename', '$departament', '$price', '$display', '$color', '$quantity') ";
+
+                        $insert = mysqli_query($connection, $insert_product);
+
+                    }
+                    else{
+                        echo "<script>alert('$folder.$basename');</script>";
+                    }
+
+                }
+                else{
+                    echo "<script>alert('This File Already Exists');</script>";
+                }
+            }
         }
     }
 
@@ -70,7 +112,7 @@
               <h3 id="loadcart">Shopping Cart</h3>
               <h3 id="loadorder">Orders</h3>
               <h3 id="loadpass">Change Password</h3>
-              <h3> <a href="#">Add Product</a> </h3>
+              <h3 id="addproducts">Add Product</h3>
               <h3 id="manage">Manage Your Products</h3>
             </div>
 <!--       Ajax Load Pages        -->
@@ -101,6 +143,11 @@
             });
               $("#loadorder").click(function(){
                   $.ajax({url: "../user/orders.php", success: function(result){
+                      $("#load").html(result);
+                  }});
+              });
+              $("#addproducts").click(function(){
+                  $.ajax({url: "../user/addproduct.php", success: function(result){
                       $("#load").html(result);
                   }});
               });

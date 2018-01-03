@@ -15,13 +15,13 @@
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $row['user_name'];
                 $_SESSION['user_id'] = $row['user_id'];
-                header("Location: ../index.php");
+                echo "<script>window.location = '../index.php';</script>";
             }else {
                 echo $sql;
             }
         }
         if (isset($_POST['reg'])) {
-            header("Location: signup.php");
+            echo "<script>window.location = 'signup.php';</script>";
         }
     }
     else{
